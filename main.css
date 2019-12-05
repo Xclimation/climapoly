@@ -5,7 +5,7 @@
 
 body {
   margin: 0;
-  background-image: url("https://i.pinimg.com/originals/a4/73/cd/a473cda6c0a58d9b2e2bc2292d16c334.jpg");
+  background-image: url("");
   background-position: center;
   background-repeat: repeat;
   background-size: 100px;
@@ -60,9 +60,9 @@ h1, h2, h3, h4, h5, h6 {
 .board {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 125px (80px)[9] 125px;
+  -ms-grid-columns: 125px (80px)[] 125px;
       grid-template-columns: 125px repeat(9, 80px) 125px;
-  -ms-grid-rows: 125px (80px)[9] 125px;
+  -ms-grid-rows: 125px (80px)[] 125px;
       grid-template-rows: 125px repeat(9, 80px) 125px;
   grid-gap: 2px;
   margin: 50px auto;
@@ -82,9 +82,9 @@ h1, h2, h3, h4, h5, h6 {
   background: #fafaf8;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[7];
+  -ms-grid-columns: (1fr)[];
       grid-template-columns: repeat(7, 1fr);
-  -ms-grid-rows: (1fr)[7];
+  -ms-grid-rows: (1fr)[];
       grid-template-rows: repeat(7, 1fr);
   justify-items: center;
   -webkit-box-align: center;
@@ -99,7 +99,7 @@ h1, h2, h3, h4, h5, h6 {
   -ms-grid-row: 4;
   grid-row: 4;
   font-size: 90px;
-  font-weight: 400;
+  font-weight: bolder;
   letter-spacing: 12px;
 }
 
@@ -149,7 +149,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .horizontal-row {
-  -ms-grid-columns: (80px)[9];
+  -ms-grid-columns: (80px)[];
       grid-template-columns: repeat(9, 80px);
   -ms-grid-rows: 125px;
       grid-template-rows: 125px;
@@ -158,7 +158,7 @@ h1, h2, h3, h4, h5, h6 {
 .vertical-row {
   -ms-grid-columns: 125px;
       grid-template-columns: 125px;
-  -ms-grid-rows: (80px)[9];
+  -ms-grid-rows: (80px)[];
       grid-template-rows: repeat(9, 80px);
 }
 
@@ -337,16 +337,16 @@ h1, h2, h3, h4, h5, h6 {
   grid-row: 11 / 12;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (12.5px)[10];
+  -ms-grid-columns: (12.5px)[];
       grid-template-columns: repeat(10, 12.5px);
-  -ms-grid-rows: (12.5px)[10];
+  -ms-grid-rows: (12.5px)[];
       grid-template-rows: repeat(10, 12.5px);
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center;
+          align-items: center
 }
 
 .jail .drawing {
