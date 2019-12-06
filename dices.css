@@ -13,12 +13,12 @@ box-sizing: border-box;
 }
 .die-list {
 display: grid;
-grid-template-columns: 1fr 1fr;
+grid-template-columns: 1fr;
 grid-template-rows: 1fr;
-height: 6rem;
+height: 4rem;
 list-style-type: none;
 transform-style: preserve-3d;
-width: 6rem;
+width: 4rem;
 }
 .even-roll {
 transition: transform 1.5s ease-out;
@@ -40,7 +40,7 @@ grid-template-areas:
 grid-template-columns: repeat(3, 1fr);
 grid-template-rows: repeat(3, 1fr);
 height: 100%;
-padding: 1rem;
+padding: 1.8rem;
 width: 100%;
 }
 .dot {
