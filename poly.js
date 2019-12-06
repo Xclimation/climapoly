@@ -7,24 +7,23 @@
 // Electricity - Go Green
 // Waste Management - Go Green
 // Green Park - Miss a turn
-
 // Property extends Box
 // station
 // Utility extends Box [electricity => solar | waste management => recycling | station => electric]
 // Card extends Box [chest | chance]
 // free [nature park, jail, go to jail, go]
-
-function Box(id, type, name, price, rent, owner, color, rank) {
-    this.id = id;
-    this.type = type;
-    this.name = name;
-    this.price = price;
-    this.rent = rent;
-    this.owner = owner;
-    this.color = color;
-    this.rank = rank;
-    
-    // TODO: calculateRent()
+class Box {
+    constructor(id, type, name, price, rent, owner, color, rank) {
+        this.id = id;
+        this.type = type;
+        this.name = name;
+        this.price = price;
+        this.rent = rent;
+        this.owner = owner;
+        this.color = color;
+        this.rank = rank;
+        // TODO: calculateRent()
+    }
 }
 
 let boxes = [];
@@ -70,132 +69,131 @@ boxes[37] = new Box(37, 'property', 'Victoria',  400,  50,  null,  'purple', 0);
 boxes[38] = new Box(38, 'tax', 'go_green',  0,  75,  null,  null, 0);
 boxes[39] = new Box(39, 'property', 'Monrovia',  400,  60,  null,  'purple', 0);
 
-function Game(numPlayers) {
-    this.numPlayers = numPlayers;
-
-    // complete with code
-    
-    /* TODO 1.1: Create player*/
+class Game {
+    constructor(numPlayers) {
+        this.numPlayers = numPlayers;
+        // complete with code
+        /* TODO 1.1: Create player*/
+    }
 }
 
-function Bank() {
-    this.balance = 1000; // check this!
-    this.name = 'bank';
+class Bank {
+    constructor() {
+        this.balance = 1000; // check this!
+        this.name = 'bank';
+    }
 }
 var bank = new Bank();
 
-function Player(name, token, color) {
-    this.name = name;
-    this.token = token;
-    this.color = color;
-    this.balance = 1500;
-    this.properties = [];
-    this.position = 0;
-    this.playing = false;
-    
-    this.move = function(steps) {
-        let nextPos = this.position + steps;
-
-        if (nextPos < 39) {
-            this.position = nextPos;
-        } else {
-            this.position = nextPos - 40;
-        }
-        // perform some action based on the position
-        console.log('Landing at:', this.position);
-        this.landingAction(this.position);
-    }
-
-    this.goToJail = function() {
-        this.position = 10;
-        console.log('Moving directly to jail');
-    }
-
-    this.pay = function(amount, creditor) {
-        if (amount <= this.balance) {
-            this.balance -= amount;
-            creditor.balance += amount;
-            console.log(`${this.name} paid $${amount} to ${creditor.name}`);
-            console.log(`${this.name}: ${this.balance}`);
-            console.log(`${creditor.name}: ${creditor.balance}`);
-            return true;
-        } else {
-            console.log('Insufficient funds.');
-            return false;
-        }
-    }
-
-    this.getMoney = function(amount) {
-        this.balance += amount;
-        console.log(`${this.name}: ${this.balance}`);
-    }
-
-    this.canDevelop = function(color) {
-        let count = 0;
-        let properties = this.properties;
-
-        for (i = 0; i < properties.length; i++) {
-            if (properties[i].color === color) {
-                count += 1;
+class Player {
+    constructor(name, token, color) {
+        this.name = name;
+        this.token = token;
+        this.color = color;
+        this.balance = 1500;
+        this.properties = [];
+        this.position = 0;
+        this.playing = false;
+        this.move = function (steps) {
+            let nextPos = this.position + steps;
+            if (nextPos < 39) {
+                this.position = nextPos;
             }
-        }
-
-        if (color === 'brown' || color === 'purple' && count === 2) {
-            return true;
-        } else {
-            if (count === 3) {
+            else {
+                this.position = nextPos - 40;
+            }
+            // perform some action based on the position
+            console.log('Landing at:', this.position);
+            this.landingAction(this.position);
+        };
+        this.goToJail = function () {
+            this.position = 10;
+            console.log('Moving directly to jail');
+        };
+        this.pay = function (amount, creditor) {
+            if (amount <= this.balance) {
+                this.balance -= amount;
+                creditor.balance += amount;
+                console.log(`${this.name} paid $${amount} to ${creditor.name}`);
+                console.log(`${this.name}: ${this.balance}`);
+                console.log(`${creditor.name}: ${creditor.balance}`);
                 return true;
             }
-            return false;
-        }
-    }
-
-    // what you can do when you land on a property/box
-    this.landingAction = function(boxId) {
-        console.log('Preparing for a safe landing...');
-        let property = boxes[boxId];
-        
-        // can't buy free property or one with an owner
-        if (!property.owner && property.type !== 'free') {
-            console.log('Buying...');
-           let paid = this.pay(property.price, bank);
-           if (paid) {
-               this.properties.push(property);
-               console.log(`Acquired ${property.type}: ${property.name}`);
-           } else {
-               //  TODO 2.1.1: auction property
-           }
-        } else if (property.name === 'go') {
-            this.getMoney(200);
-        } else if (property.name === 'go to jail') {
-            this.goToJail();
-        } else if (property.owner !== this) {
-            console.log(this);
-            console.log(property.owner);
-            console.log(property);
-            console.log('Pay rent!')
-            this.pay(property.rent, property.owner);
-        } else {
-            if (this.canDevelop(property.color)) {
-                this.develop(property);
+            else {
+                console.log('Insufficient funds.');
+                return false;
             }
-
-            console.log(property.color);
-        }
+        };
+        this.getMoney = function (amount) {
+            this.balance += amount;
+            console.log(`${this.name}: ${this.balance}`);
+        };
+        this.canDevelop = function (color) {
+            let count = 0;
+            let properties = this.properties;
+            for (i = 0; i < properties.length; i++) {
+                if (properties[i].color === color) {
+                    count += 1;
+                }
+            }
+            if (color === 'brown' || color === 'purple' && count === 2) {
+                return true;
+            }
+            else {
+                if (count === 3) {
+                    return true;
+                }
+                return false;
+            }
+        };
+        // what you can do when you land on a property/box
+        this.landingAction = function (boxId) {
+            console.log('Preparing for a safe landing...');
+            let property = boxes[boxId];
+            // can't buy free property or one with an owner
+            if (!property.owner && property.type !== 'free') {
+                console.log('Buying...');
+                let paid = this.pay(property.price, bank);
+                if (paid) {
+                    this.properties.push(property);
+                    console.log(`Acquired ${property.type}: ${property.name}`);
+                }
+                else {
+                    //  TODO 2.1.1: auction property
+                }
+            }
+            else if (property.name === 'go') {
+                this.getMoney(200);
+            }
+            else if (property.name === 'go to jail') {
+                this.goToJail();
+            }
+            else if (property.owner !== this) {
+                console.log(this);
+                console.log(property.owner);
+                console.log(property);
+                console.log('Pay rent!');
+                this.pay(property.rent, property.owner);
+            }
+            else {
+                if (this.canDevelop(property.color)) {
+                    this.develop(property);
+                }
+                console.log(property.color);
+            }
+        };
+        this.develop = function (property) {
+            // plant n trees uniformly
+            // if you get to 5 trees, raise the Green Flag
+            // adjust rent accordingly
+            console.log('You are a green champion, building your city to be green...');
+            property.rank += 1;
+            console.log(property.rank);
+        };
+        /* TODO 2.3: roll dice */
+        /* TODO 2.4: bid */
+        /* TODO 2.5: develop */
     }
-
-    this.develop = function(property) {
-        // plant n trees uniformly
-        // if you get to 5 trees, raise the Green Flag
-        // adjust rent accordingly
-        console.log('You are a green champion, building your city to be green...');
-        property.rank += 1;
-        console.log(property.rank);
-    }
-    
-    /* TODO 2.3: roll dice */
-    /* TODO 2.4: bid */
-    /* TODO 2.5: develop */
 }
 
 // Test
