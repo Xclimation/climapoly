@@ -13,7 +13,8 @@
 // Utility extends Box [electricity => solar | waste management => recycling | station => electric]
 // Card extends Box [chest | chance]
 // free [nature park, jail, go to jail, go]
-function Box(id, type, name, price, rent, owner, color) {
+
+function Box(id, type, name, price, rent, owner, color, rank) {
     this.id = id;
     this.type = type;
     this.name = name;
@@ -21,52 +22,53 @@ function Box(id, type, name, price, rent, owner, color) {
     this.rent = rent;
     this.owner = owner;
     this.color = color;
+    this.rank = rank;
     
     // TODO: calculateRent()
 }
 
 let boxes = [];
 
-boxes[0] = new Box(0,'free', 'go', 0, 0, null, null);
-boxes[1] = new Box(1, 'property', 'Abidjan', 20, 10, null, 'brown');
-boxes[2] = new Box(2, 'card', 'chest', 0, 0, null, null);
-boxes[3] = new Box('property', 'Abuja',  30,  12,  null,  'brown');
-boxes[4] = new Box('tax', 'carbon_tax',  0,  200,  null,  null);
-boxes[5] = new Box('utility', 'station',  200,  25,  null,  null);
-boxes[6] = new Box('property', 'Accra',  100,  20,  null,  'blue');
-boxes[7] = new Box('card', 'chance',  0,  0,  null,  null);
-boxes[8] = new Box('property', 'Antananarivo',  100,  20,  null,  'blue');
-boxes[9] = new Box('property', 'Bamako',  100,  20,  null,  'blue');
-boxes[10] = new Box('free', 'jail',  0,  0,  null,  null);
-boxes[11] = new Box('property', 'Conakry',  120,  25,  null,  'pink');
-boxes[12] = new Box('utility', 'electricity',  120,  15,  null,  null);
-boxes[13] = new Box('property', 'Dakar',  120,  25,  null,  'pink');
-boxes[14] = new Box('property', 'Dodoma',  120,  25,  null,  'pink');
-boxes[15] = new Box('utility', 'station',  200,  25,  null,  null);
-boxes[16] = new Box('property', 'Freetown',  200,  30,  null,  'orange');
-boxes[17] = new Box('card', 'chest',  0,  0,  null,  null);
-boxes[18] = new Box('property', 'Gaborone',  200,  30,  null,  'orange');
-boxes[19] = new Box('property', 'Kigali',  200,  30,  null,  'orange');
-boxes[20] = new Box('free', 'nature_park',  0,  0,  null,  null);
-boxes[21] = new Box('property', 'Nairobi',  220,  35,  null,  'red');
-boxes[22] = new Box('card', 'chance',  0,  0,  null,  null);
-boxes[23] = new Box('property', 'Kampala',  220,  35,  null,  'red');
-boxes[24] = new Box('property', 'Harare',  220,  35,  null,  'red');
-boxes[25] = new Box('utility', 'station',  200,  25,  null,  null);
-boxes[26] = new Box('property', 'Juba',  250,  40,  null,  'yellow');
-boxes[27] = new Box('utility', 'waste_management',  120,  15,  null,  null);
-boxes[28] = new Box('property', 'Kinshasa',  250,  40,  null,  'yellow');
-boxes[29] = new Box('property', 'Mbabane',  250,  40,  null,  'yellow');
-boxes[30] = new Box('free', 'go_to_jail',  0,  50,  null,  null);
-boxes[31] = new Box('property', 'Juba',  300,  45,  null,  'green');
-boxes[32] = new Box('property', 'Tripoli',  300,  45,  null,  'green');
-boxes[33] = new Box('card', 'chest',  0,  0,  null,  null);
-boxes[34] = new Box('property', 'Tunis',  300,  45,  null,  'green');
-boxes[35] = new Box('utility', 'station',  200,  25,  null,  null);
-boxes[36] = new Box('card', 'chance',  0,  0,  null,  null);
-boxes[37] = new Box('property', 'Victoria',  400,  50,  null,  'purple');
-boxes[38] = new Box('tax', 'go_green',  0,  75,  null,  null);
-boxes[39] = new Box('property', 'Monrovia',  400,  60,  null,  'purple');
+boxes[0] = new Box(0,'free', 'go', 0, 0, null, null, 0);
+boxes[1] = new Box(1, 'property', 'Abidjan', 20, 10, null, 'brown', 0);
+boxes[2] = new Box(2, 'card', 'chest', 0, 0, null, null, 0);
+boxes[3] = new Box(3, 'property', 'Abuja',  30,  12,  null,  'brown', 0);
+boxes[4] = new Box(4, 'tax', 'carbon_tax',  0,  200,  null,  null, 0);
+boxes[5] = new Box(5, 'utility', 'station',  200,  25,  null,  null, 0);
+boxes[6] = new Box(6, 'property', 'Accra',  100,  20,  null,  'blue', 0);
+boxes[7] = new Box(7, 'card', 'chance',  0,  0,  null,  null, 0);
+boxes[8] = new Box(8, 'property', 'Antananarivo',  100,  20,  null,  'blue', 0);
+boxes[9] = new Box(9, 'property', 'Bamako',  100,  20,  null,  'blue', 0);
+boxes[10] = new Box(10,'free', 'jail',  0,  0,  null,  null, 0);
+boxes[11] = new Box(11, 'property', 'Conakry',  120,  25,  null,  'pink', 0);
+boxes[12] = new Box(12, 'utility', 'electricity',  120,  15,  null,  null, 0);
+boxes[13] = new Box(13, 'property', 'Dakar',  120,  25,  null,  'pink', 0);
+boxes[14] = new Box(14, 'property', 'Dodoma',  120,  25,  null,  'pink', 0);
+boxes[15] = new Box(15, 'utility', 'station',  200,  25,  null,  null, 0);
+boxes[16] = new Box(16, 'property', 'Freetown',  200,  30,  null,  'orange', 0);
+boxes[17] = new Box(17, 'card', 'chest',  0,  0,  null,  null, 0);
+boxes[18] = new Box(18, 'property', 'Gaborone',  200,  30,  null,  'orange', 0);
+boxes[19] = new Box(19, 'property', 'Kigali',  200,  30,  null,  'orange', 0);
+boxes[20] = new Box(20, 'free', 'nature_park',  0,  0,  null,  null, 0);
+boxes[21] = new Box(21, 'property', 'Nairobi',  220,  35,  null,  'red', 0);
+boxes[22] = new Box(22,'card', 'chance',  0,  0,  null,  null, 0);
+boxes[23] = new Box(23,'property', 'Kampala',  220,  35,  null,  'red', 0);
+boxes[24] = new Box(24, 'property', 'Harare',  220,  35,  null,  'red', 0);
+boxes[25] = new Box(25, 'utility', 'station',  200,  25,  null,  null, 0);
+boxes[26] = new Box(26, 'property', 'Juba',  250,  40,  null,  'yellow', 0);
+boxes[27] = new Box(27, 'utility', 'waste_management',  120,  15,  null,  null, 0);
+boxes[28] = new Box(28, 'property', 'Kinshasa',  250,  40,  null,  'yellow', 0);
+boxes[29] = new Box(29, 'property', 'Mbabane',  250,  40,  null,  'yellow', 0);
+boxes[30] = new Box(30, 'free', 'go_to_jail',  0,  50,  null,  null, 0);
+boxes[31] = new Box(31,'property', 'Juba',  300,  45,  null,  'green', 0);
+boxes[32] = new Box(32, 'property', 'Tripoli',  300,  45,  null,  'green', 0);
+boxes[33] = new Box(33, 'card', 'chest',  0,  0,  null,  null, 0);
+boxes[34] = new Box(34, 'property', 'Tunis',  300,  45,  null,  'green', 0);
+boxes[35] = new Box(35, 'utility', 'station',  200,  25,  null,  null, 0);
+boxes[36] = new Box(36, 'card', 'chance',  0,  0,  null,  null, 0);
+boxes[37] = new Box(37, 'property', 'Victoria',  400,  50,  null,  'purple', 0);
+boxes[38] = new Box(38, 'tax', 'go_green',  0,  75,  null,  null, 0);
+boxes[39] = new Box(39, 'property', 'Monrovia',  400,  60,  null,  'purple', 0);
 
 function Game(numPlayers) {
     this.numPlayers = numPlayers;
@@ -100,7 +102,7 @@ function Player(name, token, color) {
             this.position = nextPos - 40;
         }
         // perform some action based on the position
-        console.log(this.position);
+        console.log('Landing at:', this.position);
         this.landingAction(this.position);
     }
 
@@ -128,8 +130,29 @@ function Player(name, token, color) {
         console.log(`${this.name}: ${this.balance}`);
     }
 
+    this.canDevelop = function(color) {
+        let count = 0;
+        let properties = this.properties;
+
+        for (i = 0; i < properties.length; i++) {
+            if (properties[i].color === color) {
+                count += 1;
+            }
+        }
+
+        if (color === 'brown' || color === 'purple' && count === 2) {
+            return true;
+        } else {
+            if (count === 3) {
+                return true;
+            }
+            return false;
+        }
+    }
+
     // what you can do when you land on a property/box
     this.landingAction = function(boxId) {
+        console.log('Preparing for a safe landing...');
         let property = boxes[boxId];
         
         // can't buy free property or one with an owner
@@ -147,11 +170,27 @@ function Player(name, token, color) {
         } else if (property.name === 'go to jail') {
             this.goToJail();
         } else if (property.owner !== this) {
+            console.log(this);
+            console.log(property.owner);
+            console.log(property);
             console.log('Pay rent!')
             this.pay(property.rent, property.owner);
         } else {
-            // develop your space if it meets criteria
+            if (this.canDevelop(property.color)) {
+                this.develop(property);
+            }
+
+            console.log(property.color);
         }
+    }
+
+    this.develop = function(property) {
+        // plant n trees uniformly
+        // if you get to 5 trees, raise the Green Flag
+        // adjust rent accordingly
+        console.log('You are a green champion, building your city to be green...');
+        property.rank += 1;
+        console.log(property.rank);
     }
     
     /* TODO 2.3: roll dice */
@@ -161,11 +200,11 @@ function Player(name, token, color) {
 
 // Test
 var p1 = new Player('cody', 'shoe', 'gold');
-var p2 = new Player('koku', 'cat', 'blue');
-//var greenland = boxes[20];
-//var electricity = boxes[12];
+var abidjan = boxes[1];
+var abuja = boxes[3];
 
-p1.move(3) // Abuja
-p2.move(11); // Accra
-p1.move(6); // Conakry
-p1.move(7); // Station
+abidjan.owner = p1;
+abuja.owner = p1;
+
+p1.properties = [abidjan, abuja];
+p1.move(3); // green champion
