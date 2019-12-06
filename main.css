@@ -92,6 +92,44 @@ h1, h2, h3, h4, h5, h6 {
           align-items: center;
 }
 
+.operating-buttons{
+  margin-left: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  border-radius: 5px;
+  position: absolute;
+  cursor: pointer;
+  bottom: -250px;
+  margin-top: 350px;
+  z-index: 100;
+}
+
+.operating-buttons p{
+  display: none;
+}
+
+#roll-the-dice:hover>p, #roll-dices:hover>p{
+  display: block;
+}
+
+#roll-the-dice:hover, #roll-dices:hover{
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: 0.5s ease-in;
+}
+#roll-dices{
+  margin-left: 10px;
+  width: 100px;
+  border-radius: 5px;
+  height: 100px;
+  background-image: url(dice-icon-png-24.jpg);
+  background-color: rgba(0, 0, 0, 0.5);
+  background-position: center;
+  background-size: cover;
+}
 .title {
   -ms-grid-column: 1;
   -ms-grid-column-span: 8;
@@ -219,6 +257,14 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
+.space:hover{
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+  font-weight: bolder;
+  transition: 0.5s ease-in;
+  animation: roll 2s ease-in;
+}
+
 .space .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -288,7 +334,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .fee .name {
   padding-top: 10px;
-  font-size: 14px;
+  font-size: 10px;
 }
 
 .fee .instructions {

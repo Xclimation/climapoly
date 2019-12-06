@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="dices.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
@@ -12,13 +13,90 @@
         <div class="board">
             <div class="center">
                 <div class="community-chest-deck">
-                    <h2 class="label">Community Chest</h2>
-                    <div class="deck"></div>
+                    <h2 class="label">Chest</h2>
+                    <div class="deck"><img src="monopoly_card_image.jpeg" alt="Cards" width="150" height="110"></div>
                 </div>
                 <h1 class="title">CLIMAPOLY</h1>
                 <div class="chance-deck">
                     <h2 class="label">Chance</h2>
-                    <div class="deck"></div>
+                    <div class="deck"><img src="monopoly_card_image.jpeg" alt="Cards" width="150" height="110"></div>
+                </div>
+                <div class="operating-buttons">
+                    <div id="roll-dices">
+                        <p>Roll <br>Dices</p>
+                    </div>
+                    <div class="dice">
+                            <ol class="die-list even-roll" data-roll="1" id="die-1">
+                            <li class="die-item" data-side="1">
+                                <span class="dot"></span>
+                            </li>
+                            <li class="die-item" data-side="2">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </li>
+                            <li class="die-item" data-side="3">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </li>
+                            <li class="die-item" data-side="4">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </li>
+                            <li class="die-item" data-side="5">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </li>
+                            <li class="die-item" data-side="6">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </li>
+                            </ol>
+                            <ol class="die-list odd-roll" data-roll="1" id="die-2">
+                            <li class="die-item" data-side="1">
+                                <span class="dot"></span>
+                            </li>
+                            <li class="die-item" data-side="2">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </li>
+                            <li class="die-item" data-side="3">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </li>
+                            <li class="die-item" data-side="4">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </li>
+                            <li class="die-item" data-side="5">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </li>
+                            <li class="die-item" data-side="6">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </li>
+                            </ol>
+                        </div>
                 </div>
             </div>
             <div class="space corner go">
@@ -32,14 +110,14 @@
                 <div class="space property">
                     <div class="container">
                         <div class="color-bar light-blue"></div>
-                        <div class="name">Connecticut Avenue</div>
+                        <div class="name">Conakry</div>
                         <div class="price">PRICE $120</div>
                     </div>
                 </div>
                 <div class="space property">
                     <div class="container">
                         <div class="color-bar light-blue"></div>
-                        <div class="name">Vermont Avenue</div>
+                        <div class="name">Dakar</div>
                         <div class="price">Price $100</div>
                     </div>
                 </div>
@@ -52,20 +130,20 @@
                 <div class="space property">
                     <div class="container">
                         <div class="color-bar light-blue"></div>
-                        <div class="name">Oriental Avenue</div>
+                        <div class="name">Dodoma</div>
                         <div class="price">Price $100</div>
                     </div>
                 </div>
                 <div class="space railroad">
                     <div class="container">
-                        <div class="name">Reading Railroad</div>
+                        <div class="name">Station</div>
                         <i class="drawing fa fa-subway"></i>
                         <div class="price">Price $200</div>
                     </div>
                 </div>
                 <div class="space fee income-tax">
                     <div class="container">
-                        <div class="name">Income Tax</div>
+                        <div class="name">Carbone Tax</div>
                         <div class="diamond"></div>
                         <div class="instructions">Pay 10%<br>or<br>$200</div>
                     </div>
@@ -73,13 +151,13 @@
                 <div class="space property">
                     <div class="container">
                         <div class="color-bar dark-purple"></div>
-                        <div class="name">Baltic Avenue</div>
+                        <div class="name">Abuja</div>
                         <div class="price">Price $50</div>
                     </div>
                 </div>
                 <div class="space community-chest">
                     <div class="container">
-                        <div class="name">Community Chest</div>
+                        <div class="name">Chest</div>
                         <i class="drawing fa fa-cube"></i>
                         <div class="instructions">Follow instructions on top card</div>
                     </div>
@@ -87,7 +165,7 @@
                 <div class="space property">
                     <div class="container">
                         <div class="color-bar dark-purple"></div>
-                        <div class="name three-line-name">Mediter-<br>ranean<br>Avenue</div>
+                        <div class="name three-line-name">Abidjan</div>
                         <div class="price">Price $50</div>
                     </div>
                 </div>
@@ -112,20 +190,20 @@
                 <div class="space property">
                     <div class="container">
                         <div class="color-bar orange"></div>
-                        <div class="name">New York Avenue</div>
+                        <div class="name">Kigali</div>
                         <div class="price">Price $200</div>
                     </div>
                 </div>
                 <div class="space property">
                     <div class="container">
                         <div class="color-bar orange"></div>
-                        <div class="name">Tennessee Avenue</div>
+                        <div class="name">Gaborone</div>
                         <div class="price">Price $180</div>
                     </div>
                 </div>
                 <div class="space community-chest">
                     <div class="container">
-                        <div class="name">Community Chest</div>
+                        <div class="name">Chest</div>
                         <i class="drawing fa fa-cube"></i>
                         <div class="instructions">Follow instructions on top card</div>
                     </div>
@@ -133,13 +211,13 @@
                 <div class="space property">
                     <div class="container">
                         <div class="color-bar orange"></div>
-                        <div class="name">St. James Avenue</div>
+                        <div class="name">Freetown</div>
                         <div class="price">Price $180</div>
                     </div>
                 </div>
                 <div class="space railroad">
                     <div class="container">
-                        <div class="name long-name">Pennsylvania Railroad</div>
+                        <div class="name long-name">Station</div>
                         <i class="drawing fa fa-subway"></i>
                         <div class="price">Price $200</div>
                     </div>
@@ -147,20 +225,20 @@
                 <div class="space property">
                     <div class="container">
                         <div class="color-bar purple"></div>
-                        <div class="name">Virginia Avenue</div>
+                        <div class="name">Bamako</div>
                         <div class="price">Price $160</div>
                     </div>
                 </div>
                 <div class="space property">
                     <div class="container">
                         <div class="color-bar purple"></div>
-                        <div class="name">States Avenue</div>
+                        <div class="name">Antanana <br> rivo</div>
                         <div class="price">Price $140</div>
                     </div>
                 </div>
                 <div class="space utility electric-company">
                     <div class="container">
-                        <div class="name">Electric Company</div>
+                        <div class="name">Electricity</div>
                         <i class="drawing fa fa-lightbulb-o"></i>
                         <div class="price">Price $150</div>
                     </div>
@@ -168,7 +246,7 @@
                 <div class="space property">
                     <div class="container">
                         <div class="color-bar purple"></div>
-                        <div class="name">St. Charles Place</div>
+                        <div class="name">Accra</div>
                         <div class="price">Price $140</div>
                     </div>
                 </div>
@@ -184,7 +262,7 @@
                 <div class="space property">
                     <div class="container">
                         <div class="color-bar red"></div>
-                        <div class="name">Kentucky Avenue</div>
+                        <div class="name">Nairobi</div>
                         <div class="price">Price $220</div>
                     </div>
                 </div>
@@ -197,20 +275,20 @@
                 <div class="space property">
                     <div class="container">
                         <div class="color-bar red"></div>
-                        <div class="name">Indiana Avenue</div>
+                        <div class="name">Kampala</div>
                         <div class="price">Price $220</div>
                     </div>
                 </div>
                 <div class="space property">
                     <div class="container">
                         <div class="color-bar red"></div>
-                        <div class="name">Illinois Avenue</div>
+                        <div class="name">Harare</div>
                         <div class="price">Price $200</div>
                     </div>
                 </div>
                 <div class="space railroad">
                     <div class="container">
-                        <div class="name">B & O Railroad</div>
+                        <div class="name">station</div>
                         <i class="drawing fa fa-subway"></i>
                         <div class="price">Price $200</div>
                     </div>
@@ -218,20 +296,20 @@
                 <div class="space property">
                     <div class="container">
                         <div class="color-bar yellow"></div>
-                        <div class="name">Atlantic Avenue</div>
+                        <div class="name">Porto-novo</div>
                         <div class="price">Price $260</div>
                     </div>
                 </div>
                 <div class="space property">
                     <div class="container">
                         <div class="color-bar yellow"></div>
-                        <div class="name">Ventnor Avenue</div>
+                        <div class="name">Tripoli</div>
                         <div class="price">Price $260</div>
                     </div>
                 </div>
                 <div class="space utility waterworks">
                     <div class="container">
-                        <div class="name">Waterworks</div>
+                        <div class="name">Waste Managment</div>
                         <i class="drawing fa fa-tint"></i>
                         <div class="price">Price $120</div>
                     </div>
@@ -239,7 +317,7 @@
                 <div class="space property">
                     <div class="container">
                         <div class="color-bar yellow"></div>
-                        <div class="name">Marvin Gardens</div>
+                        <div class="name">Tunis</div>
                         <div class="price">Price $280</div>
                     </div>
                 </div>
@@ -255,20 +333,20 @@
                 <div class="space property">
                     <div class="container">
                         <div class="color-bar green"></div>
-                        <div class="name">Pacific Avenue</div>
+                        <div class="name">Juba</div>
                         <div class="price">Price $300</div>
                     </div>
                 </div>
                 <div class="space property">
                     <div class="container">
                         <div class="color-bar green"></div>
-                        <div class="name three-line-name">North Carolina Avenue</div>
+                        <div class="name three-line-name">Kinshasa</div>
                         <div class="price">Price $300</div>
                     </div>
                 </div>
                 <div class="space community-chest">
                     <div class="container">
-                        <div class="name">Community Chest</div>
+                        <div class="name">Chest</div>
                         <i class="drawing fa fa-cube"></i>
                         <div class="instructions">Follow instructions on top card</div>
                     </div>
@@ -276,13 +354,13 @@
                 <div class="space property">
                     <div class="container">
                         <div class="color-bar green"></div>
-                        <div class="name long-name">Pennsylvania Avenue</div>
+                        <div class="name long-name">Mbabane</div>
                         <div class="price">Price $320</div>
                     </div>
                 </div>
                 <div class="space railroad">
                     <div class="container">
-                        <div class="name">Short Line</div>
+                        <div class="name">Station</div>
                         <i class="drawing fa fa-subway"></i>
                         <div class="price">Price $200</div>
                     </div>
@@ -296,13 +374,13 @@
                 <div class="space property">
                     <div class="container">
                         <div class="color-bar dark-blue"></div>
-                        <div class="name">Park Place</div>
+                        <div class="name">Victoria</div>
                         <div class="price">Price $350</div>
                     </div>
                 </div>
                 <div class="space fee luxury-tax">
                     <div class="container">
-                        <div class="name">Luxury Tax</div>
+                        <div class="name">Coperate social resp</div>
                         <div class="drawing fa fa-diamond"></div>
                         <div class="instructions">Pay $75.00</div>
                     </div>
@@ -310,14 +388,13 @@
                 <div class="space property">
                     <div class="container">
                         <div class="color-bar dark-blue"></div>
-                        <div class="name">Boardwalk</div>
+                        <div class="name">Monrovia</div>
                         <div class="price">Price $400</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script src="main.js"></script>
 </body>
-<script src="main.js"></script>
 </html>
-
