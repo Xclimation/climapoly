@@ -13,52 +13,6 @@
 // Utility extends Box [electricity => solar | waste management => recycling | station => electric]
 // Card extends Box [chest | chance]
 // free [nature park, jail, go to jail, go]
-
-let boxes = [
-    {type: 'free', name:'go', price: 0, rent: 0, owner: null, color: null},
-    {type: 'property', name:'Abidjan', price: 20, rent: 10, owner: null, color: 'brown'},
-    {type: 'card', name:'chest', price: 0, rent: 0, owner: null, color: null},
-    {type: 'property', name:'Abuja', price: 30, rent: 12, owner: null, color: 'brown'},
-    {type: 'tax', name:'carbon_tax', price: 0, rent: 200, owner: null, color: null},
-    {type: 'utility', name:'station', price: 200, rent: 25, owner: null, color: null},
-    {type: 'property', name:'Accra', price: 100, rent: 20, owner: null, color: 'blue'},
-    {type: 'card', name:'chance', price: 0, rent: 0, owner: null, color: null},
-    {type: 'property', name:'Antananarivo', price: 100, rent: 20, owner: null, color: 'blue'},
-    {type: 'property', name:'Bamako', price: 100, rent: 20, owner: null, color: 'blue'},
-    {type: 'free', name:'jail', price: 0, rent: 0, owner: null, color: null},
-    {type: 'property', name:'Conakry', price: 120, rent: 25, owner: null, color: 'pink'},
-    {type: 'utility', name:'electricity', price: 120, rent: 15, owner: null, color: null},
-    {type: 'property', name:'Dakar', price: 120, rent: 25, owner: null, color: 'pink'},
-    {type: 'property', name:'Dodoma', price: 120, rent: 25, owner: null, color: 'pink'},
-    {type: 'utility', name:'station', price: 200, rent: 25, owner: null, color: null},
-    {type: 'property', name:'Freetown', price: 200, rent: 30, owner: null, color: 'orange'},
-    {type: 'card', name:'chest', price: 0, rent: 0, owner: null, color: null},
-    {type: 'property', name:'Gaborone', price: 200, rent: 30, owner: null, color: 'orange'},
-    {type: 'property', name:'Kigali', price: 200, rent: 30, owner: null, color: 'orange'},
-    {type: 'free', name:'nature_park', price: 0, rent: 0, owner: null, color: null},
-    {type: 'property', name:'Nairobi', price: 220, rent: 35, owner: null, color: 'red'},
-    {type: 'card', name:'chance', price: 0, rent: 0, owner: null, color: null},
-    {type: 'property', name:'Kampala', price: 220, rent: 35, owner: null, color: 'red'},
-    {type: 'property', name:'Harare', price: 220, rent: 35, owner: null, color: 'red'},
-    {type: 'utility', name:'station', price: 200, rent: 25, owner: null, color: null},
-    {type: 'property', name:'Juba', price: 250, rent: 40, owner: null, color: 'yellow'},
-    {type: 'utility', name:'waste_management', price: 120, rent: 15, owner: null, color: null},
-    {type: 'property', name:'Kinshasa', price: 250, rent: 40, owner: null, color: 'yellow'},
-    {type: 'property', name:'Mbabane', price: 250, rent: 40, owner: null, color: 'yellow'},
-    {type: 'free', name:'go_to_jail', price: 0, rent: 50, owner: null, color: null},
-    {type: 'property', name:'Juba', price: 300, rent: 45, owner: null, color: 'green'},
-    {type: 'property', name:'Tripoli', price: 300, rent: 45, owner: null, color: 'green'},
-    {type: 'card', name:'chest', price: 0, rent: 0, owner: null, color: null},
-    {type: 'property', name:'Tunis', price: 300, rent: 45, owner: null, color: 'green'},
-    {type: 'utility', name:'station', price: 200, rent: 25, owner: null, color: null},
-    {type: 'card', name:'chance', price: 0, rent: 0, owner: null, color: null},
-    {type: 'property', name:'Victoria', price: 400, rent: 50, owner: null, color: 'purple'},
-    {type: 'tax', name:'go_green', price: 0, rent: 75, owner: null, color: null},
-    {type: 'property', name:'Monrovia', price: 400, rent: 60, owner: null, color: 'purple'},
-];
-
-
-/*
 function Box(id, type, name, price, rent, owner, color) {
     this.id = id;
     this.type = type;
@@ -67,13 +21,52 @@ function Box(id, type, name, price, rent, owner, color) {
     this.rent = rent;
     this.owner = owner;
     this.color = color;
+    
     // TODO: calculateRent()
 }
+
 let boxes = [];
 
-boxes[0] = new Box(0, 'free', 'go', 0, 0, 0, null, null);
-boxes[1] = new Box(1, 'property', 'go', 0, 0, 0, null, null);
-*/
+boxes[0] = new Box(0,'free', 'go', 0, 0, null, null);
+boxes[1] = new Box(1, 'property', 'Abidjan', 20, 10, null, 'brown');
+boxes[2] = new Box(2, 'card', 'chest', 0, 0, null, null);
+boxes[3] = new Box('property', 'Abuja',  30,  12,  null,  'brown');
+boxes[4] = new Box('tax', 'carbon_tax',  0,  200,  null,  null);
+boxes[5] = new Box('utility', 'station',  200,  25,  null,  null);
+boxes[6] = new Box('property', 'Accra',  100,  20,  null,  'blue');
+boxes[7] = new Box('card', 'chance',  0,  0,  null,  null);
+boxes[8] = new Box('property', 'Antananarivo',  100,  20,  null,  'blue');
+boxes[9] = new Box('property', 'Bamako',  100,  20,  null,  'blue');
+boxes[10] = new Box('free', 'jail',  0,  0,  null,  null);
+boxes[11] = new Box('property', 'Conakry',  120,  25,  null,  'pink');
+boxes[12] = new Box('utility', 'electricity',  120,  15,  null,  null);
+boxes[13] = new Box('property', 'Dakar',  120,  25,  null,  'pink');
+boxes[14] = new Box('property', 'Dodoma',  120,  25,  null,  'pink');
+boxes[15] = new Box('utility', 'station',  200,  25,  null,  null);
+boxes[16] = new Box('property', 'Freetown',  200,  30,  null,  'orange');
+boxes[17] = new Box('card', 'chest',  0,  0,  null,  null);
+boxes[18] = new Box('property', 'Gaborone',  200,  30,  null,  'orange');
+boxes[19] = new Box('property', 'Kigali',  200,  30,  null,  'orange');
+boxes[20] = new Box('free', 'nature_park',  0,  0,  null,  null);
+boxes[21] = new Box('property', 'Nairobi',  220,  35,  null,  'red');
+boxes[22] = new Box('card', 'chance',  0,  0,  null,  null);
+boxes[23] = new Box('property', 'Kampala',  220,  35,  null,  'red');
+boxes[24] = new Box('property', 'Harare',  220,  35,  null,  'red');
+boxes[25] = new Box('utility', 'station',  200,  25,  null,  null);
+boxes[26] = new Box('property', 'Juba',  250,  40,  null,  'yellow');
+boxes[27] = new Box('utility', 'waste_management',  120,  15,  null,  null);
+boxes[28] = new Box('property', 'Kinshasa',  250,  40,  null,  'yellow');
+boxes[29] = new Box('property', 'Mbabane',  250,  40,  null,  'yellow');
+boxes[30] = new Box('free', 'go_to_jail',  0,  50,  null,  null);
+boxes[31] = new Box('property', 'Juba',  300,  45,  null,  'green');
+boxes[32] = new Box('property', 'Tripoli',  300,  45,  null,  'green');
+boxes[33] = new Box('card', 'chest',  0,  0,  null,  null);
+boxes[34] = new Box('property', 'Tunis',  300,  45,  null,  'green');
+boxes[35] = new Box('utility', 'station',  200,  25,  null,  null);
+boxes[36] = new Box('card', 'chance',  0,  0,  null,  null);
+boxes[37] = new Box('property', 'Victoria',  400,  50,  null,  'purple');
+boxes[38] = new Box('tax', 'go_green',  0,  75,  null,  null);
+boxes[39] = new Box('property', 'Monrovia',  400,  60,  null,  'purple');
 
 function Game(numPlayers) {
     this.numPlayers = numPlayers;
