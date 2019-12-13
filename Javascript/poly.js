@@ -3,7 +3,7 @@
 // chest - mystery box
 // carbon tax - sponsor
 // CSR - eco-champion
-// Stations 
+// Stations
 // Electricity - Go Green
 // Waste Management - Go Green
 // Green Park - Miss a turn
@@ -23,7 +23,6 @@ function Box(id, type, name, price, rent, owner, color, rank) {
     this.owner = owner;
     this.color = color;
     this.rank = rank;
-    
     // TODO: calculateRent()
 }
 
