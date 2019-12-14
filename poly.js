@@ -1,18 +1,13 @@
 function rollDice() {
-    let steps = 0;
+    let total = 0, prev;
 
-    const dice = [...document.querySelectorAll(".die-list")];
-    dice.forEach(die => {
-        toggleClasses(die);
-        die.dataset.roll = getRandomNumber(1, 6);
-        steps += +die.dataset.roll;
-    });
-    return steps;
-}
+    for (i =  0; i < 2; i++) {
+        prev = total;
+        total += getRandomNumber(1, 6);
+        console.log(total - prev);
+    }
 
-function toggleClasses(die) {
-    die.classList.toggle("odd-roll");
-    die.classList.toggle("even-roll");
+    return total;
 }
 
 function getRandomNumber(min, max) {
@@ -20,9 +15,6 @@ function getRandomNumber(min, max) {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
-document.getElementById("roll-dices").addEventListener("click", rollDice);
-
 
 class Box {
     constructor(id, name) {
@@ -242,8 +234,5 @@ class Player {
     /* TODO 2.4: bid */
 }
 
-// Test
-var p1 = new Player('cody', 'shoe', 'gold');
-var p2 = new Player('loki', 'hat', 'blue');
-
-//p1.move(steps);
+// TESTS:-
+console.log(rollDice());
