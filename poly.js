@@ -1,17 +1,29 @@
-// Climapoly => Monopoly for climate change
-// chance - pop quiz
-// chest - mystery box
-// carbon tax - sponsor
-// CSR - eco-champion
-// Stations 
-// Electricity - Go Green
-// Waste Management - Go Green
-// Green Park - Miss a turn
-// Property extends Box
-// station
-// Utility extends Box [electricity => solar | waste management => recycling | station => electric]
-// Card extends Box [chest | chance]
-// free [nature park, jail, go to jail, go]
+function rollDice() {
+    let steps = 0;
+
+    const dice = [...document.querySelectorAll(".die-list")];
+    dice.forEach(die => {
+        toggleClasses(die);
+        die.dataset.roll = getRandomNumber(1, 6);
+        steps += +die.dataset.roll;
+    });
+    return steps;
+}
+
+function toggleClasses(die) {
+    die.classList.toggle("odd-roll");
+    die.classList.toggle("even-roll");
+}
+
+function getRandomNumber(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+document.getElementById("roll-dices").addEventListener("click", rollDice);
+
+
 class Box {
     constructor(id, name) {
         this.id = id;
@@ -139,6 +151,7 @@ class Player {
     }
 
     move(steps) {
+        console.log('Moving...', steps + ' steps.');
         let nextPos = this.position + steps;
         if (nextPos < 39) {
             this.position = nextPos;
@@ -233,4 +246,4 @@ class Player {
 var p1 = new Player('cody', 'shoe', 'gold');
 var p2 = new Player('loki', 'hat', 'blue');
 
-p1.move(7);
+//p1.move(steps);
