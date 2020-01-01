@@ -37,7 +37,7 @@ body{
 }
 
 .mid-box-right-area ,.mid-box-left-area{
-    min-width: 150px;
+    min-width: 120px;
     background-color: cornflowerblue;
     display: flex;
     flex-direction: column;
@@ -48,7 +48,7 @@ body{
 }
 
 .l,.r{
-    min-width: 150px;
+    min-width: 120px;
     background-color: cornflowerblue
 }
 .mid-box-center-area{
