@@ -1,0 +1,3 @@
+function createBoxCard(boxId, boxDescription){
+    
+}

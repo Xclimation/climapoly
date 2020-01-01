@@ -1,0 +1,7 @@
+class Card{
+    constructor(id, owner, status){
+        this.id = id;
+        this.owner = owner;
+        this.status = status;
+    }
+}

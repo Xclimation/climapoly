@@ -1,0 +1,136 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Oswald", sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    color: #080808;
+    text-transform: uppercase;
+}
+#main-container{
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-direction:column;
+    min-height: 100vh;
+    /* grid-template-columns: 1fr;
+    grid-template-rows: 125px 1fr 125px; */
+    /* height: 100vh; */
+}
+
+.container-middle-box{
+    display: flex;
+    flex-direction: row;
+    flex: 3;
+}
+
+.container-upper-box, .container-lower-box{
+    display: flex;
+    flex: 1;
+    width: 100%;
+}
+
+.container-upper-box, .container-lower-box{
+    /* grid-template-columns: 125px repeat(9, 1fr) 125px; */
+}
+
+.container-upper-box .box{
+    display: flex;
+    flex-direction: column;
+    transform: rotate(180deg);
+}
+
+/* .container-middle-box{
+    grid-template-columns: 125px 1fr 125px;
+} */
+
+.mid-box-right-area, .mid-box-left-area{
+    display: flex;
+    flex-direction: column;
+    background-color: red;
+    /* grid-template-columns: 65px;
+    grid-template-rows: repeat(9, 125px); */
+}
+
+.mid-box-right-area .box, .mid-box-left-area .box{
+    /* display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    position: relative;
+    transform-origin: center center;
+    height: 125px; */
+    /* flex: 1; */
+    width: inherit;
+}
+
+/* .mid-box-right-area .box{
+    transform: translate(30px, -30px) rotate(90deg);
+}
+
+.mid-box-left-area .box{
+    transform: translate(30px, -30px) rotate(-90deg);
+} */
+
+.box{
+    border: 1px solid black;
+    margin: 0.5px;
+}
+
+/* @media screen and (max-width:1024px){
+    #main-container{
+        width: 100%;
+        margin: 0;
+        grid-template-rows: 80px 1fr 80px;
+    }
+
+    .container-upper-box, .container-lower-box{
+        grid-template-columns: 80px repeat(9, 1fr) 80px;
+    }
+
+    .container-middle-box{
+        grid-template-columns: 80px 1fr 80px;
+        grid-template-rows: auto;
+    }
+} */
+
+.color-banner{
+    height: 20%;
+    border-bottom: 2px solid black;
+}
+
+.red-color{
+    background-color: red;
+}
+
+.yellow-color{
+    background-color: rgb(255, 255, 0);
+}
+
+.green-color{
+    background-color: green;
+}
+
+.orange-color{
+    background-color: rgb(255, 166, 0);
+}
+
+.blue-color{
+    background-color: rgb(29, 29, 139);
+}
+
+.light-blue{
+    background-color: rgb(81, 187, 253);
+}
+
+.purple{
+    background-color: rgb(151, 72, 151);
+}
+
+.dark-purple{
+    background-color: rgb(77, 32, 77);
+}
