@@ -14,7 +14,7 @@ body{
     background-color: blueviolet;
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 60%;
     margin: auto;
     min-height: 100vh;
 }
@@ -24,6 +24,7 @@ body{
     width: 100%;
     flex:1;
     display: flex;
+    min-height: 120px;
 }
 
 .container-middle-box{
@@ -35,6 +36,11 @@ body{
 .up-box,.lw-box{
     flex: 1;
 }
+
+/* .box{
+    display: flex;
+    flex-direction: column;
+} */
 
 .mid-box-right-area ,.mid-box-left-area{
     min-width: 120px;
